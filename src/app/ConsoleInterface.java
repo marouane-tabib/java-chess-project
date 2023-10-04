@@ -1,6 +1,7 @@
 package app;
 
 import chess.ChessPiece;
+import chess.Color;
 
 public class ConsoleInterface {
     // https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
@@ -38,7 +39,11 @@ public class ConsoleInterface {
         if (piece == null) {
             System.out.print("-");
         } else {
-            System.out.print(piece);
+            if (piece.getColor() == Color.WHITE) {
+                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+            } else {
+                System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
+            }
         }
         System.out.print(" ");
     }
