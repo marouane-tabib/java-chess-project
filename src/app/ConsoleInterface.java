@@ -63,4 +63,9 @@ public class ConsoleInterface {
             throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
         }
     }
+
+    public static void clearScreen() {
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
+    }
 }
