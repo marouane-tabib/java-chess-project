@@ -20,6 +20,14 @@ public class ChessMatch {
         initialSetup();
     }
 
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public Color getCurrentPlayer() {
+        return currentPlayer;
+    }
     public ChessPiece[][] getPieces() {
         ChessPiece[][] matrix = new ChessPiece[this.board.getRows()][this.board.getColumns()];
 
