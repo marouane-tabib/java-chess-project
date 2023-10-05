@@ -8,9 +8,14 @@ import boardgame.Piece;
 import boardgame.Position;
 
 public class ChessMatch {
+
+    private int turn;
+    private Color currentPlayer;
     private Board board;
 
     public ChessMatch() {
+        turn = 1;
+        currentPlayer = Color.WHITE;
         this.board = new Board(8, 8);
         initialSetup();
     }
