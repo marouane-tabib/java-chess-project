@@ -28,13 +28,13 @@ public class ConsoleInterface {
     public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
-    
-    public static void printBoard(ChessPiece[][] pieces) {
+
+    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
         System.out.println(ANSI_CYAN + "   _________________" + ANSI_RESET);
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + ANSI_CYAN + " | " + ANSI_RESET);
             for (int j = 0; j < pieces[i].length; j++) {
-                printPiece(pieces[i][j], false);
+                printPiece(pieces[i][j], possibleMoves[i][j]);
             }
             System.out.println(ANSI_CYAN + "|" + ANSI_RESET);
         }
