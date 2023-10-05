@@ -29,11 +29,11 @@ public class ChessMatch {
         return currentPlayer;
     }
     public ChessPiece[][] getPieces() {
-        ChessPiece[][] matrix = new ChessPiece[this.board.getRows()][this.board.getColumns()];
+        ChessPiece[][] matrix = new ChessPiece[board.getRows()][board.getColumns()];
 
-        for (int i = 0; i < this.board.getRows(); i++) {
-            for (int j = 0; j < this.board.getColumns(); j++) {
-                matrix[i][j] = (ChessPiece) this.board.piece(i, j);
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
+                matrix[i][j] = (ChessPiece) board.piece(i, j);
             }
         }
 
