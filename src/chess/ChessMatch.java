@@ -7,16 +7,24 @@ import chess.pieces.Rook;
 import boardgame.Piece;
 import boardgame.Position;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChessMatch {
 
     private int turn;
     private Color currentPlayer;
     private Board board;
 
+    private List<Piece> picesOnTheBoard;
+    private List<Piece> capturedPieces;
+
     public ChessMatch() {
         turn = 1;
         currentPlayer = Color.WHITE;
         this.board = new Board(8, 8);
+        picesOnTheBoard = new ArrayList<>();
+        capturedPieces = new ArrayList<>();
         initialSetup();
     }
 
