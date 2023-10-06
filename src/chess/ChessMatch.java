@@ -78,6 +78,10 @@ public class ChessMatch {
         Piece p = board.removePiece(source);
         Piece capturedPiece = board.removePiece(target);
         board.placePiece(p, target);
+        if (capturedPiece != null) {
+            picesOnTheBoard.remove(capturedPiece);
+            capturedPieces.add(capturedPiece);
+        }
         return capturedPiece;
     }
 
@@ -95,6 +99,7 @@ public class ChessMatch {
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
+        picesOnTheBoard.add(piece);
     }
 
     private void validateTargetPosition(Position source, Position target) {
